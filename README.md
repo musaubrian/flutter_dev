@@ -1,2 +1,2 @@
-# flutter_dev
-my flutter learning
+# flutter dev
+container for my flutter projects
