@@ -1,41 +1,51 @@
 import 'package:flutter/material.dart';
 
-void main() {
-	runApp(const MyApp());
+void main() => (const MaterialApp(
+      home: Home(),
+    ));
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Shaddup",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.deepOrange,
+        centerTitle: true,
+      ),
+      body: const Center(
+        child: Text(
+          'Centered in body',
+          style: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      floatingActionButton: const FloatingActionButton.small(
+        onPressed: null,
+        backgroundColor: Colors.deepOrange,
+        child: Icon(Icons.add_outlined),
+      ),
+    );
+  }
 }
 
-class MyApp extends StatelessWidget {
-	const MyApp({super.key});
-	
-
-	@override
-	Widget build(BuildContext context) {
-		return MaterialApp(
-			home: Scaffold(
-				appBar: AppBar(
-					title: const Text('Learning_App'),
-					backgroundColor: Colors.blue[500],
-				),
-				body: Column(
-					children: [
-						const Text('Hello'),
-						const BackButton(
-
-						),
-						Container(
-							color: Colors.teal,
-							margin: const EdgeInsets.all(30.0),
-							padding: const EdgeInsets.all(20.0),
-							child: const Text('TExt in the teal container'),
-						),
-					],
-				),
-
-				floatingActionButton: FloatingActionButton(
-					onPressed: () {},
-					child: const Text('Press'),
-				),
-			),
-		);
-	}
-}
+// home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('No Title'),
+//           centerTitle: true,
+//         ),
+//         body: const Center(
+//           child: Text("data 3"),
+//         ),
+//         floatingActionButton:
+//             const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
+//       ),
